@@ -1,0 +1,4 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.nnit.pb.common.manager.TokenManager,\
+  com.nnit.pb.common.redis.config.RedisConfig,\
+  com.nnit.pb.common.redis.service.RedisService

@@ -1,0 +1,7 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.nnit.pb.api.factory.RemoteTaskServiceFallbackFactory,\
+  com.nnit.pb.api.factory.RemoteAFServiceFallbackFactory,\
+  com.nnit.pb.api.factory.RemoteWXServiceFallbackFactory,\
+  com.nnit.pb.api.aspect.RoleAuthorize,\
+  com.nnit.pb.api.exception.ResultExceptionHandler
+  

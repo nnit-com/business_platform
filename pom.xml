@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.nnit</groupId>
+  <artifactId>packagedBusiness</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <name>packagedBusiness</name>
+  
+
+  <properties>
+    <testp.version>0.0.1-SNAPSHOT</testp.version>  
+   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+   <java.version>1.8</java.version>
+    <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
+    <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
+    <spring-cloud-alibaba.version>2.2.7.RELEASE</spring-cloud-alibaba.version>
+    <alibaba.nacos.version>1.4.3</alibaba.nacos.version>
+    <pb-swagger2.version>0.0.1-SNAPSHOT</pb-swagger2.version>
+    <pb-common.version>0.0.1-SNAPSHOT</pb-common.version>
+    <pb-api.version>0.0.1-SNAPSHOT</pb-api.version>
+    <springfox.swagger.version>2.7.0</springfox.swagger.version>
+    <java-jwt.version>2.2.0</java-jwt.version>
+    <fastjson.version>2.0.4</fastjson.version>
+    <mysql.version>8.0.13</mysql.version>
+
+    
+  </properties>
+  
+  <dependencyManagement>
+  <dependencies>
+    <!-- SpringBoot 依赖配置 -->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+    </dependency>
+  	<dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+    </dependency> 	
+    <!-- SpringCloud Alibaba 微服务 -->
+    <dependency>
+        <groupId>com.alibaba.cloud</groupId>
+        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+        <version>${spring-cloud-alibaba.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+    </dependency>  
+
+    <!-- Alibaba Nacos 配置 -->
+    <dependency>
+        <groupId>com.alibaba.nacos</groupId>
+        <artifactId>nacos-client</artifactId>
+        <version>${alibaba.nacos.version}</version>
+    </dependency>
+    <dependency>
+	    <groupId>io.springfox</groupId>
+	    <artifactId>springfox-swagger-ui</artifactId>
+	    <version>${springfox.swagger.version}</version>    
+	</dependency>
+	<dependency>
+	    <groupId>io.springfox</groupId>
+	    <artifactId>springfox-swagger2</artifactId>
+	    <version>${springfox.swagger.version}</version>   
+	</dependency> 	
+	<dependency>
+    	<groupId>com.nnit</groupId>
+    	<artifactId>pb-swagger2</artifactId>
+	    <version>${pb-swagger2.version}</version>    	
+	</dependency>  
+	<dependency>
+    	<groupId>com.nnit</groupId>
+    	<artifactId>pb-common</artifactId>
+	    <version>${pb-common.version}</version>    	
+	</dependency> 
+	<dependency>
+    	<groupId>com.nnit</groupId>
+    	<artifactId>pb-api</artifactId>
+	    <version>${pb-api.version}</version>    	
+	</dependency> 
+	<dependency>
+	    <groupId>com.auth0</groupId>
+	    <artifactId>java-jwt</artifactId>
+	    <version>${java-jwt.version}</version>
+	</dependency>	
+	<!-- Alibaba Fastjson -->
+	<dependency>
+	    <groupId>com.alibaba</groupId>
+	    <artifactId>fastjson</artifactId>
+  	    <version>${fastjson.version}</version>   
+	</dependency>	
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>${mysql.version}</version>
+	</dependency>
+  </dependencies>
+  </dependencyManagement>  
+  <modules>
+  	<module>pb-gateway</module>
+  	<module>pb-auth</module>
+  	<module>pb-swagger2</module>
+  	<module>pb-common</module>
+  	<module>pb-task</module>
+  	<module>pb-handler</module>
+  	<module>pb-api</module>
+  </modules>
+      <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+  
+</project>
